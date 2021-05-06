@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+
+                <Label Margin="0,0,0,10" Text="SQLite DATABASE SAMPLE" FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+                <Entry x:Name="txtPersonId" Placeholder="PersonId - Update and Delete"></Entry>
+                <Entry x:Name="txtName" Placeholder="Enter Person Name"></Entry>
+
+                <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button Text="Add" WidthRequest="200" Clicked="BtnAdd_Clicked"/>
+                    <Button Text="Read" WidthRequest="200" Clicked="BtnRead_Clicked"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button Text="Update" WidthRequest="200" Clicked="BtnUpdate_Clicked" />
+                    <Button Text="Delete" WidthRequest="200" Clicked="BtnDelete_Clicked" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Button Text="Delete All" WidthRequest="200" Clicked="BtnDeleteAll_Clicked" />
+                </StackLayout>
+
+                <ListView x:Name="lstPersons">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" Detail="{Binding PersonID}"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
